@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProtonType.Content.Pipeline
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDSImporter.WINDOWS", "ProtonType.Content.Pipeline\DDSImporter\DDSImporter.WINDOWS.csproj", "{26C387C6-7313-47D4-A05F-14639AB02D70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RawModelProcessor.WINDOWS", "ProtonType.Content.Pipeline\RawModelProcessor\RawModelProcessor.WINDOWS.csproj", "{48E4029A-115C-4DC2-AF3A-0AB94F36BFC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{26C387C6-7313-47D4-A05F-14639AB02D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26C387C6-7313-47D4-A05F-14639AB02D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26C387C6-7313-47D4-A05F-14639AB02D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E4029A-115C-4DC2-AF3A-0AB94F36BFC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E4029A-115C-4DC2-AF3A-0AB94F36BFC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E4029A-115C-4DC2-AF3A-0AB94F36BFC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E4029A-115C-4DC2-AF3A-0AB94F36BFC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{26C387C6-7313-47D4-A05F-14639AB02D70} = {A921886B-C6F7-4FF8-8668-EC20004C464A}
+		{48E4029A-115C-4DC2-AF3A-0AB94F36BFC0} = {A921886B-C6F7-4FF8-8668-EC20004C464A}
 	EndGlobalSection
 EndGlobal
