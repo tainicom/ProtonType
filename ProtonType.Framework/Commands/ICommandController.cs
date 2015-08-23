@@ -14,7 +14,7 @@
 //   limitations under the License.
 #endregion
 
-namespace ProtonType.Framework.Commands
+namespace tainicom.ProtonType.Framework.Commands
 {
     public interface ICommandController
     {
