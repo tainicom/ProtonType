@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>tainicom.ProtonType.Content.Pipeline</RootNamespace>
-    <AssemblyName>tainicom.ProtonType.Content.Pipeline.DDSImporter</AssemblyName>
+    <AssemblyName>ProtonType.Content.Pipeline.DDSImporter</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -24,7 +24,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\..\bin\Release\Windows\Content.Pipeline\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
