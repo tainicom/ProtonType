@@ -14,7 +14,7 @@
 //   limitations under the License.
 #endregion
 
-namespace ProtonType.Framework.ViewModels
+namespace tainicom.ProtonType.Framework.ViewModels
 {
     public class ToolViewModel : PaneViewModel
     {        

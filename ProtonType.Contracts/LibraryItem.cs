@@ -16,7 +16,7 @@
 
 using System;
 
-namespace ProtonType.Contracts
+namespace tainicom.ProtonType.Contracts
 {
     public class LibraryItem : LibraryItemDescription
     {

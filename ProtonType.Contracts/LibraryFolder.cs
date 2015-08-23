@@ -16,7 +16,7 @@
 
 using System.Collections.Generic;
 
-namespace ProtonType.Contracts
+namespace tainicom.ProtonType.Contracts
 {
     public class LibraryFolder : LibraryItemDescription
     {

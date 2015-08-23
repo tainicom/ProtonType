@@ -19,7 +19,7 @@ using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Windows;
 
-namespace ProtonType.Framework.Helpers
+namespace tainicom.ProtonType.Framework.Helpers
 {
     public class NotificationObject : DependencyObject, INotifyPropertyChanged
     {
