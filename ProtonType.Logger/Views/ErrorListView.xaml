@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="tainicom.ProtonType.Logger.Views.ErrorListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignWidth="600"
+             d:DesignHeight="200"
+             >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Name="toolBarPanel1" Orientation="Vertical" Background="Transparent" Margin="2">
+            <ToggleButton Focusable="False" ToolTip="Errors"   Margin="1" BorderBrush="Transparent" IsChecked="{Binding ShowErrors}"><Image Source="/ProtonType.LoggerModule;component/Icons/StatusCriticalError_16x.png" Width="16" SnapsToDevicePixels="True"></Image></ToggleButton>
+            <ToggleButton Focusable="False" ToolTip="Warnings" Margin="1" BorderBrush="Transparent" IsChecked="{Binding ShowWarnings}"><Image Source="/ProtonType.LoggerModule;component/Icons/StatusWarning_16x.png" Width="16" SnapsToDevicePixels="True"></Image></ToggleButton>
+            <Button       Focusable="False" ToolTip="Clear"    Margin="1" BorderBrush="Transparent" Command="{Binding ClearMessagesCommand}"><Image Source="/ProtonType.LoggerModule;component/Icons/ClearWindowContent_16x.png" Width="16" SnapsToDevicePixels="True"></Image></Button>
+        </StackPanel>
+
+        <DataGrid Grid.Column="1" ItemsSource="{Binding Messages}" 
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  HeadersVisibility="All"
+                  Background="Transparent" 
+                  Foreground="White"
+                  BorderBrush="Gray"
+                  BorderThickness="1"
+                  HorizontalGridLinesBrush="LightGray"
+                  VerticalGridLinesBrush="LightGray"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                  >
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridCell}">                                
+                                <ContentPresenter VerticalAlignment="Top"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="SizeToCells">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate><Image Source="{Binding ImageSource}" SnapsToDevicePixels="True" Width="12" Margin="2" /></DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Width="SizeToCells" Header=""                   Binding="{Binding ErrorCode}" />
+                <DataGridTextColumn Width="auto"        Header="Description"        Binding="{Binding Description}" />
+                <DataGridTextColumn Width="auto"        Header="Filename"           Binding="{Binding Filename}" />
+                <DataGridTextColumn Width="SizeToCells" Header="FragmentIdentifier" Binding="{Binding FragmentIdentifier}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

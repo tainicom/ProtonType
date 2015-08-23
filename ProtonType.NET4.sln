@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonType.Framework.NET4",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonType.FileSystem.NET4", "ProtonType.FileSystem\ProtonType.FileSystem.NET4.csproj", "{98E2187D-2831-419D-A90F-723AC645D9ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonType.Logger.NET4", "ProtonType.Logger\ProtonType.Logger.NET4.csproj", "{C0862807-ACCB-4347-922D-7FF0D8560293}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{98E2187D-2831-419D-A90F-723AC645D9ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98E2187D-2831-419D-A90F-723AC645D9ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98E2187D-2831-419D-A90F-723AC645D9ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0862807-ACCB-4347-922D-7FF0D8560293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0862807-ACCB-4347-922D-7FF0D8560293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0862807-ACCB-4347-922D-7FF0D8560293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0862807-ACCB-4347-922D-7FF0D8560293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
