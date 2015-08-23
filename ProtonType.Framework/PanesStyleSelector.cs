@@ -14,11 +14,11 @@
 //   limitations under the License.
 #endregion
 
-using ProtonType.Framework.ViewModels;
+using tainicom.ProtonType.Framework.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace ProtonType.Framework
+namespace tainicom.ProtonType.Framework
 {
     public class PanesStyleSelector : StyleSelector
     {

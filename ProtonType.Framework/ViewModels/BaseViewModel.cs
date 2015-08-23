@@ -13,9 +13,9 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 #endregion
-using ProtonType.Framework.Helpers;
+using tainicom.ProtonType.Framework.Helpers;
 
-namespace ProtonType.Framework.ViewModels
+namespace tainicom.ProtonType.Framework.ViewModels
 {
     public class BaseViewModel : NotificationObject
     {

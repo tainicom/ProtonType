@@ -17,7 +17,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProtonType.Contracts
+namespace tainicom.ProtonType.Contracts
 {
     public interface IContentLibrary
     {

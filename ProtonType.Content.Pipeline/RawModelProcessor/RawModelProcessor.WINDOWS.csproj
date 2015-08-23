@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>tainicom.ProtonType.Content.Pipeline</RootNamespace>
-    <AssemblyName>tainicom.ProtonType.Content.Pipeline.RawModelProcessor</AssemblyName>
+    <AssemblyName>ProtonType.Content.Pipeline.RawModelProcessor</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

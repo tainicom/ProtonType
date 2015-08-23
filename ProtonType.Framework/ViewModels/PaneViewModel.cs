@@ -15,7 +15,7 @@
 #endregion
 using System.Windows.Media;
 
-namespace ProtonType.Framework.ViewModels
+namespace tainicom.ProtonType.Framework.ViewModels
 {
     public class PaneViewModel : BaseViewModel
     {
