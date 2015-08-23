@@ -14,7 +14,7 @@
 //   limitations under the License.
 #endregion
 
-namespace ProtonType.Contracts
+namespace tainicom.ProtonType.Contracts
 {
     public class LibraryItemDescription
     {

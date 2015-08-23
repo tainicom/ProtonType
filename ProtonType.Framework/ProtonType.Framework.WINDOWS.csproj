@@ -8,7 +8,7 @@
     <ProjectGuid>{7ED07123-58DF-440E-BE73-FA37F48AF799}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProtonType.Framework</RootNamespace>
+    <RootNamespace>tainicom.ProtonType.Framework</RootNamespace>
     <AssemblyName>ProtonType.Framework</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

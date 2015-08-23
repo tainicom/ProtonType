@@ -17,7 +17,7 @@
 using System;
 using System.Windows.Input;
 
-namespace ProtonType.Framework.Helpers
+namespace tainicom.ProtonType.Framework.Helpers
 {
     public class RelayCommand : ICommand
     {
