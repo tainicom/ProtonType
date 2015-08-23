@@ -1,4 +1,4 @@
-﻿#region License
+#region License
 //   Copyright 2015 Kastellanos Nikolaos
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,28 +14,18 @@
 //   limitations under the License.
 #endregion
 
-using System;
-
-namespace tainicom.ProtonType.Contracts
+namespace ProtonType.Framework.Commands
 {
-    public class LibraryItem : LibraryItemDescription
+    abstract public class CommandBase
     {
-        public Type Type;
-        public Guid GUID;
-        public LibraryItem(string name, Type type)
-            : base(name)
+        protected readonly IReceiver receiver;
+
+        public CommandBase(IReceiver receiver)
         {
-            this.Type = type;
-        }
-        public LibraryItem(string name)
-            : base(name)
-        {
-            this.GUID = Guid.NewGuid();
+            this.receiver = receiver;
         }
 
-        public override string ToString()
-        {
-            return string.Format("LibraryItem '{0}', Type={1}, GUID={2}", Name, Type.Name, GUID);
-        }
+        public abstract void Execute();
+        public abstract void Undo();
     }
 }

@@ -14,28 +14,32 @@
 //   limitations under the License.
 #endregion
 
-using System;
-
-namespace tainicom.ProtonType.Contracts
+namespace tainicom.ProtonType.Framework.ViewModels
 {
-    public class LibraryItem : LibraryItemDescription
-    {
-        public Type Type;
-        public Guid GUID;
-        public LibraryItem(string name, Type type)
-            : base(name)
+    public class ToolViewModel : PaneViewModel
+    {        
+        protected readonly object Model;
+        public string Name { get; private set; }
+
+        private bool _isVisible = true;
+        public bool IsVisible
         {
-            this.Type = type;
-        }
-        public LibraryItem(string name)
-            : base(name)
-        {
-            this.GUID = Guid.NewGuid();
+            get { return _isVisible; }
+            set
+            {
+                if (_isVisible != value)
+                {
+                    _isVisible = value;
+                    RaisePropertyChanged(()=>IsVisible);
+                }
+            }
         }
 
-        public override string ToString()
+        public ToolViewModel(object model, string name)
         {
-            return string.Format("LibraryItem '{0}', Type={1}, GUID={2}", Name, Type.Name, GUID);
+            this.Model = model;
+            this.Name = name;
+            this.Title = name;
         }
     }
 }

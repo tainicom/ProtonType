@@ -14,28 +14,26 @@
 //   limitations under the License.
 #endregion
 
-using System;
+using tainicom.ProtonType.Framework.ViewModels;
+using System.Windows;
+using System.Windows.Controls;
 
-namespace tainicom.ProtonType.Contracts
+namespace tainicom.ProtonType.Framework
 {
-    public class LibraryItem : LibraryItemDescription
+    public class PanesStyleSelector : StyleSelector
     {
-        public Type Type;
-        public Guid GUID;
-        public LibraryItem(string name, Type type)
-            : base(name)
-        {
-            this.Type = type;
-        }
-        public LibraryItem(string name)
-            : base(name)
-        {
-            this.GUID = Guid.NewGuid();
-        }
+        public Style ToolStyle { get; set; }
+        public Style DocumentStyle { get; set; }
 
-        public override string ToString()
+        public override System.Windows.Style SelectStyle(object item, System.Windows.DependencyObject container)
         {
-            return string.Format("LibraryItem '{0}', Type={1}, GUID={2}", Name, Type.Name, GUID);
+            if (item is ToolViewModel)
+                return ToolStyle;
+
+            if (item is DocumentViewModel)
+                return DocumentStyle;
+
+            return base.SelectStyle(item, container);
         }
     }
 }

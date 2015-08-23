@@ -14,28 +14,13 @@
 //   limitations under the License.
 #endregion
 
-using System;
-
-namespace tainicom.ProtonType.Contracts
+namespace ProtonType.Framework.Commands
 {
-    public class LibraryItem : LibraryItemDescription
+    public interface ICommandController
     {
-        public Type Type;
-        public Guid GUID;
-        public LibraryItem(string name, Type type)
-            : base(name)
-        {
-            this.Type = type;
-        }
-        public LibraryItem(string name)
-            : base(name)
-        {
-            this.GUID = Guid.NewGuid();
-        }
+        void AddAndExecute(CommandBase command);        
 
-        public override string ToString()
-        {
-            return string.Format("LibraryItem '{0}', Type={1}, GUID={2}", Name, Type.Name, GUID);
-        }
+        ICommandController CreateBatchController();
+        void AddAndExecute(ICommandController batch);
     }
 }

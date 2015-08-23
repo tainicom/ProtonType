@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{48E4029A-115C-4DC2-AF3A-0AB94F36BFC0}</ProjectGuid>
+    <ProjectGuid>{7ED07123-58DF-440E-BE73-FA37F48AF799}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>tainicom.ProtonType.Content.Pipeline</RootNamespace>
-    <AssemblyName>ProtonType.Content.Pipeline.RawModelProcessor</AssemblyName>
+    <RootNamespace>tainicom.ProtonType.Framework</RootNamespace>
+    <AssemblyName>ProtonType.Framework</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -17,33 +17,43 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\Windows\Content.Pipeline\</OutputPath>
+    <OutputPath>..\bin\Debug\Windows\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\Windows\Content.Pipeline\</OutputPath>
+    <OutputPath>..\bin\Release\Windows\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="MonoGame.Framework">
-      <HintPath>$(MSBuildExtensionsPath)\MonoGame\v3.0\Tools\MonoGame.Framework.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoGame.Framework.Content.Pipeline">
-      <HintPath>$(MSBuildExtensionsPath)\MonoGame\v3.0\Tools\MonoGame.Framework.Content.Pipeline.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\ICommandController.cs" />
+    <Compile Include="Commands\IReceiver.cs" />
+    <Compile Include="Helpers\NotificationObject.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="PanesStyleSelector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RawModelProcessor.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DocumentViewModel.cs" />
+    <Compile Include="ViewModels\PaneViewModel.cs" />
+    <Compile Include="ViewModels\ToolViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

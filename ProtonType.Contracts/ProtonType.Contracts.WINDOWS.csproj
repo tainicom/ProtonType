@@ -8,7 +8,7 @@
     <ProjectGuid>{D4F3A265-F93D-4C17-8644-3FDE8B87972D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProtonType.Contracts</RootNamespace>
+    <RootNamespace>tainicom.ProtonType.Contracts</RootNamespace>
     <AssemblyName>ProtonType.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

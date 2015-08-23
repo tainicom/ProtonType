@@ -13,29 +13,11 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 #endregion
+using tainicom.ProtonType.Framework.Helpers;
 
-using System;
-
-namespace tainicom.ProtonType.Contracts
+namespace tainicom.ProtonType.Framework.ViewModels
 {
-    public class LibraryItem : LibraryItemDescription
+    public class BaseViewModel : NotificationObject
     {
-        public Type Type;
-        public Guid GUID;
-        public LibraryItem(string name, Type type)
-            : base(name)
-        {
-            this.Type = type;
-        }
-        public LibraryItem(string name)
-            : base(name)
-        {
-            this.GUID = Guid.NewGuid();
-        }
-
-        public override string ToString()
-        {
-            return string.Format("LibraryItem '{0}', Type={1}, GUID={2}", Name, Type.Name, GUID);
-        }
     }
 }
