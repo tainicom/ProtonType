@@ -22,8 +22,7 @@ namespace tainicom.ProtonType.Contracts
     {
         public Type Type;
         public Guid GUID;
-        public LibraryItem(string name, Type type)
-            : base(name)
+        public LibraryItem(string name, Type type) : base(name)
         {
             this.Type = type;
         }
@@ -33,6 +32,11 @@ namespace tainicom.ProtonType.Contracts
             this.GUID = Guid.NewGuid();
         }
 
+        public virtual void PreInitialize(object item)
+        {
+
+        }
+        
         public override string ToString()
         {
             return string.Format("LibraryItem '{0}', Type={1}, GUID={2}", Name, Type.Name, GUID);

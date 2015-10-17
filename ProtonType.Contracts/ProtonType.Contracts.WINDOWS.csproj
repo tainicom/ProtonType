@@ -31,18 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AvalonDock">
-      <HintPath>..\3rdPartyLibraries\AvalonDock 2.0.2000\Libraries\AvalonDock.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="IContentLibrary.cs" />
     <Compile Include="LibraryFolder.cs" />
     <Compile Include="LibraryItem.cs" />
     <Compile Include="LibraryItemDescription.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
