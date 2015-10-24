@@ -18,7 +18,9 @@ namespace tainicom.ProtonType.Framework.Commands
 {
     public interface ICommandController
     {
-        void AddAndExecute(CommandBase command);        
+        bool Idle { get; }
+
+        void AddAndExecute(CommandBase command);
 
         ICommandController CreateBatchController();
         void AddAndExecute(ICommandController batch);
