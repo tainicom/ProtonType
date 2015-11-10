@@ -21,7 +21,6 @@ namespace tainicom.ProtonType.Contracts
 {
     public interface IContentLibrary
     {
-        Type[] GetTypeList();
         IList<LibraryItemDescription> Items { get; }
     }
 }
