@@ -34,6 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="IContentLibrary.cs" />
+    <Compile Include="LibraryItemPropertyLibraryItemName.cs" />
+    <Compile Include="LibraryItemPropertyValue.cs" />
     <Compile Include="LibraryFolder.cs" />
     <Compile Include="LibraryItem.cs" />
     <Compile Include="LibraryItemDescription.cs" />
