@@ -26,18 +26,18 @@
     <SupportedCultures />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Windows Phone' ">
-    <OutputPath>..\bin\Release\WP71\</OutputPath>
+    <OutputPath>..\bin\Release\WP7_1\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <DefineConstants>TRACE;WINDOWS_PHONE WP7</DefineConstants>
+    <DefineConstants>TRACE;WP7_1</DefineConstants>
     <XnaCompressContent>false</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows Phone' ">
-    <OutputPath>..\bin\Debug\WP71\</OutputPath>
+    <OutputPath>..\bin\Debug\WP7_1\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
@@ -45,7 +45,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <DefineConstants>TRACE;DEBUG;WINDOWS_PHONE WP7</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;WP7_1</DefineConstants>
     <XnaCompressContent>false</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup>
@@ -58,7 +58,7 @@
     <Compile Include="LibraryFolder.cs" />
     <Compile Include="LibraryItem.cs" />
     <Compile Include="LibraryItemDescription.cs" />
-    <Compile Include="Properties\AssemblyInfo.WP7.cs" />
+    <Compile Include="Properties\AssemblyInfo.WP7_1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
