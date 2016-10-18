@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ProtonType.Contracts")]
-[assembly: AssemblyCopyright("Copyright ©  Kastellanos Nikolaos 2014-2015")]
+[assembly: AssemblyCopyright("Copyright ©  Kastellanos Nikolaos 2014-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
