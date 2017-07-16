@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonType.Framework.WINDOW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonType.Contracts.WINDOWS", "ProtonType.Contracts\ProtonType.Contracts.WINDOWS.csproj", "{D4F3A265-F93D-4C17-8644-3FDE8B87972D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonType.FileSystem.WINDOWS", "ProtonType.FileSystem\ProtonType.FileSystem.WINDOWS.csproj", "{98E2187D-2831-419D-A90F-723AC645D9ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D4F3A265-F93D-4C17-8644-3FDE8B87972D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4F3A265-F93D-4C17-8644-3FDE8B87972D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4F3A265-F93D-4C17-8644-3FDE8B87972D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E2187D-2831-419D-A90F-723AC645D9ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E2187D-2831-419D-A90F-723AC645D9ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E2187D-2831-419D-A90F-723AC645D9ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E2187D-2831-419D-A90F-723AC645D9ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

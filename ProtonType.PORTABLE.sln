@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonType.Contracts.PORTABLE", "ProtonType.Contracts\ProtonType.Contracts.PORTABLE.csproj", "{37BBF309-E80D-4518-8BCD-578F25CFB3A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonType.FileSystem.PORTABLE", "ProtonType.FileSystem\ProtonType.FileSystem.PORTABLE.csproj", "{8B8C9EC4-C5B9-4A53-A98F-7D4A3F6F04F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{37BBF309-E80D-4518-8BCD-578F25CFB3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37BBF309-E80D-4518-8BCD-578F25CFB3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37BBF309-E80D-4518-8BCD-578F25CFB3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B8C9EC4-C5B9-4A53-A98F-7D4A3F6F04F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B8C9EC4-C5B9-4A53-A98F-7D4A3F6F04F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B8C9EC4-C5B9-4A53-A98F-7D4A3F6F04F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B8C9EC4-C5B9-4A53-A98F-7D4A3F6F04F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
