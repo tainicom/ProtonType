@@ -32,12 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Commands\DeselectBrowserItemCmd.cs" />
-    <Compile Include="Commands\SelectBrowserItemCmd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BrowserItem.cs" />
     <Compile Include="ViewModels\FileBrowser.cs" />
-    <Compile Include="ViewModels\FileBrowser.IReciever.cs" />
     <Compile Include="ViewModels\FolderItem.cs" />
   </ItemGroup>
   <ItemGroup>

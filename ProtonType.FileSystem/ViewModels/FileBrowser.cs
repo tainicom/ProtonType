@@ -14,9 +14,7 @@
 //   limitations under the License.
 #endregion
 
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using tainicom.ProtonType.Framework.ViewModels;
 
@@ -28,17 +26,6 @@ namespace tainicom.ProtonType.ViewModels
         FolderItem _rootItem;
         public IList<BrowserItem> Items { get { return _rootItem.Items; } }
         
-        ObservableCollection<BrowserItem> _selectedItems = new ObservableCollection<BrowserItem>();
-        ReadOnlyObservableCollection<BrowserItem> _readonlySelectedItems = null;
-        public ReadOnlyObservableCollection<BrowserItem> SelectedItems
-        {
-            get
-            {
-                if (_readonlySelectedItems == null) _readonlySelectedItems = new ReadOnlyObservableCollection<BrowserItem>(this._selectedItems);
-                return _readonlySelectedItems;
-            }
-        }
-
         public FileBrowser(object model, string name, string absolutePath)
             : base(model, name)
         {
@@ -60,15 +47,5 @@ namespace tainicom.ProtonType.ViewModels
         {
             return Path.Combine(_absolutePath, relativePath);
         }
-        
-        #region Events
-        public event EventHandler<EventArgs> SelectionChanged;
-        protected virtual void OnSelectionChanged(EventArgs e)
-        {
-            var handler = SelectionChanged;
-                if (handler == null) return;
-            handler(this, e);
-        }
-        #endregion
     }
 }
