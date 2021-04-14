@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D163FFB3-33C5-44F1-9C87-81E0A5B6AC0B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tainicom.ProtonType.App</RootNamespace>
+    <AssemblyName>ProtonType</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.30701.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ProtonType.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>$(SolutionDir)bin\Debug\x86\net4\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>$(SolutionDir)bin\Release\x86\net4\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <DebugType>none</DebugType>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\3rdPartyLibraries\MahApps.Metro\Libraries\1.6.5\net40\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ActiveDocumentConverter.cs" />
+    <Compile Include="CommandMgr\BatchCmd.cs" />
+    <Compile Include="CommandMgr\CommandController.cs" />
+    <Compile Include="Commands\HidePaneCmd.cs" />
+    <Compile Include="Common\FileIconInterop.cs" />
+    <Compile Include="Controls\DialogPlaceholder.xaml.cs">
+      <DependentUpon>DialogPlaceholder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolToColorBrushConverter.cs" />
+    <Compile Include="Converters\ObjectToTypeNameConverter.cs" />
+    <Compile Include="Common\RecentFileList.cs" />
+    <Compile Include="FileDocuments\FileDocumentsMgr.cs" />
+    <Compile Include="FileDocuments\RecentFilesMgr.cs" />
+    <Compile Include="LayoutInitializer.cs" />
+    <Compile Include="Modules\ModulesMgr.cs" />
+    <Compile Include="Modules\Site.cs" />
+    <Compile Include="ViewModels\Base\DocumentViewModel.cs" />
+    <Compile Include="ViewModels\Base\ToolViewModel.cs" />
+    <Compile Include="ViewModels\FileNewDialogViewModel.cs" />
+    <Compile Include="ViewModels\FileSaveAsDialogViewModel.cs" />
+    <Compile Include="ViewModels\FileSaveDialogViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.DockableViewModels.cs" />
+    <Compile Include="ViewModels\MainViewModel.IDisposable.cs" />
+    <Compile Include="ViewModels\MainViewModel.DragDrop.cs" />
+    <Compile Include="ViewModels\MainViewModel.IReciever.cs" />
+    <Compile Include="ViewModels\MainViewModel.Menus.cs" />
+    <Compile Include="ViewModels\Data\ObservableEnumerableAggregate.cs" />
+    <Compile Include="ViewModels\WelcomeViewModel.cs" />
+    <Compile Include="Views\FileNewDialogView.xaml.cs">
+      <DependentUpon>FileNewDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FileSaveAsDialogView.xaml.cs">
+      <DependentUpon>FileSaveAsDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FileSaveDialogView.xaml.cs">
+      <DependentUpon>FileSaveDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MainModel.cs" />
+    <Compile Include="PanesTemplateSelector.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\WelcomeView.xaml.cs">
+      <DependentUpon>WelcomeView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\DialogPlaceholder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FileNewDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FileSaveAsDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FileSaveDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WelcomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3rdPartyLibraries\AvalonDock\src\AvalonDock\AvalonDock.NET4.csproj">
+      <Project>{DB81988F-E0F2-45A0-A1FD-8C37F3D35244}</Project>
+      <Name>AvalonDock.NET4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdPartyLibraries\AvalonDock\src\AvalonDock.Themes.MetroDark\AvalonDock.Themes.MetroDark.NET4.csproj">
+      <Project>{7022A42A-7B99-40E4-91F4-E6340334E0F5}</Project>
+      <Name>AvalonDock.Themes.MetroDark.NET4</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(PROTONTYPE_PATH)\ProtonType.Framework\ProtonType.Framework.NET4.csproj">
+      <Project>{7ED07123-58DF-440E-BE73-FA37F48AF799}</Project>
+      <Name>ProtonType.Framework.NET4</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ProtonType.ico" />
+    <Resource Include="Icons\NewDocument.png" />
+    <Resource Include="Icons\OpenDocument.png" />
+    <Resource Include="Icons\SaveDocument.png" />
+    <Resource Include="Icons\FileWarning.png" />
+    <Resource Include="Icons\SaveDocumentAs.png" />
+    <Resource Include="Icons\Edit\Redo.png" />
+    <Resource Include="Icons\Edit\Undo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

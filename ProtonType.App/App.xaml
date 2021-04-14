@@ -1,0 +1,15 @@
+﻿<Application x:Class="tainicom.ProtonType.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"			 
+	  		 xmlns:local="clr-namespace:tainicom.ProtonType.App"
+             xmlns:pg="http://schemas.denisvuyka.wordpress.com/wpfpropertygrid"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        
+    </Application.Resources>
+    
+    <JumpList.JumpList >
+        <JumpList ShowRecentCategory="True" ShowFrequentCategory="True"></JumpList> 
+    </JumpList.JumpList>
+    
+</Application>

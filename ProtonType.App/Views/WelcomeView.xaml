@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="tainicom.ProtonType.App.Views.WelcomeView" 
+            x:Name="userControl" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"             
+             xmlns:common="clr-namespace:tainicom.ProtonType.App.Common" 
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="240" >
+
+    <UserControl.Resources>
+              
+    </UserControl.Resources>
+
+    <StackPanel MaxWidth="350" HorizontalAlignment="Left" >
+        <Border MinHeight="340" Margin="20" Padding="10" >
+            <StackPanel>
+                <TextBlock FontSize="20" FontFamily="Segoe UI Symbol" Foreground="LightGray" FontWeight="ExtraBold" >Recent</TextBlock> 
+                <Separator/>
+                <StackPanel Margin="0,4,0,0">
+                    <ItemsControl ItemsSource="{Binding RecentFiles}">
+                        <!-- specify the template used to render each item -->
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Click="TouchButton_Click" Margin="0,0,0,8">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="{Binding FileIcon}" Width="16" Height="16" Margin="0 0 4 0"></Image>
+                                                    <TextBlock FontSize="18" Text="{Binding Filename}" Foreground="LightGray"></TextBlock>
+                                                </StackPanel>
+                                                <TextBlock FontSize="11" Text="{Binding FullPath}" Foreground="Gray" TextWrapping="Wrap"></TextBlock>
+                                            </StackPanel>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </StackPanel>            
+        </Border>
+    </StackPanel>
+    
+</UserControl>

@@ -1,0 +1,183 @@
+﻿<Window x:Name="window" 
+        x:Class="tainicom.ProtonType.App.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avalonDock="http://avalondock.codeplex.com"
+        xmlns:local="clr-namespace:tainicom.ProtonType.App"
+        xmlns:Framework="clr-namespace:tainicom.ProtonType.Framework;assembly=ProtonType.Framework"
+        xmlns:common="clr-namespace:tainicom.ProtonType.App.Common"
+        Title="{Binding Title}" Width="1280" Height="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
+        Icon="/ProtonType;component/ProtonType.ico"
+        UseLayoutRounding="True"
+		AllowDrop="True" DragOver="OnDragOver" Drop="OnDrop"
+        Loaded="Window_Loaded"
+     >
+
+     <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary 
+                  Source="../Resources/ResourceDictionary.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Window.InputBindings>
+        <KeyBinding Key="Z" Modifiers="Control" Command="{Binding ElementName=window, Path=DataContext.UndoCommand}"></KeyBinding>
+        <KeyBinding Key="Y" Modifiers="Control" Command="{Binding ElementName=window, Path=DataContext.RedoCommand}"></KeyBinding>
+    </Window.InputBindings>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        
+        <Menu Name="menu" Grid.Row="0" >
+            <MenuItem Header="File" Name="File">
+                <MenuItem Header="New" Click="MenuFileNew_Click">
+                    <MenuItem.Icon><Image Source="/ProtonType;component/icons/NewDocument.png" SnapsToDevicePixels="True"/></MenuItem.Icon> 
+                </MenuItem>
+                <MenuItem Header="Open" Click="MenuFileOpen_Click">
+                    <MenuItem.Icon><Image Source="/ProtonType;component/icons/openDocument.png" SnapsToDevicePixels="True" ></Image></MenuItem.Icon>
+                </MenuItem>                    
+                <Separator />
+                <MenuItem Header="Save" Click="MenuFileSave_Click">
+                    <MenuItem.Icon><Image Source="/ProtonType;component/icons/saveDocument.png" SnapsToDevicePixels="True" ></Image></MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Save As" Click="MenuFileSaveAs_Click">
+                    <MenuItem.Icon><Image Source="/ProtonType;component/icons/saveDocumentAs.png" SnapsToDevicePixels="True" ></Image></MenuItem.Icon>
+                </MenuItem>
+                
+                <Separator/>
+                <MenuItem Header="Recent Files" Name="RecentFiles">
+                    <common:RecentFileList MenuClick="RecentFileList_MenuClick" />
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Exit" Click="MenuFileExit_Click"/>
+
+            </MenuItem>
+            <MenuItem Header="Edit" Name="Edit">
+                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Command="{Binding ElementName=window, Path=DataContext.UndoCommand}" >
+                    <MenuItem.Icon>
+                        <Image Source="/ProtonType;component/Icons/Edit/Undo.png" SnapsToDevicePixels="True"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Command="{Binding ElementName=window, Path=DataContext.RedoCommand}" >
+                    <MenuItem.Icon>
+                        <Image Source="/ProtonType;component/Icons/Edit/Redo.png" SnapsToDevicePixels="True"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+            </MenuItem>            
+            <MenuItem Header="Tools" Name="Tools">
+            </MenuItem>
+            <MenuItem Header="Panels" Name="Panels">
+            </MenuItem>
+            <MenuItem Header="Views" Name="Views">
+            </MenuItem>
+            
+            <MenuItem Header="Help" Name="Help">
+                <MenuItem Header="About"/>
+            </MenuItem>
+
+        </Menu>
+        
+        <ToolBarTray Name="toolBarTray" Grid.Row="1" >
+            <ToolBar Name="fileBar" ToolBarTray.IsLocked="True">
+                <Button ToolTip="New" Click="MenuFileNew_Click"><Image Source="/ProtonType;component/icons/NewDocument.png" SnapsToDevicePixels="True"></Image></Button>
+                <Button ToolTip="Open" Click="MenuFileOpen_Click"><Image Source="/ProtonType;component/icons/openDocument.png" SnapsToDevicePixels="True" ></Image></Button>
+                <Separator/>
+                <Button ToolTip="Save" Click="MenuFileSave_Click"><Image Source="/ProtonType;component/icons/saveDocument.png" SnapsToDevicePixels="True" ></Image></Button>
+            </ToolBar>
+            
+        </ToolBarTray>
+        
+        <avalonDock:DockingManager Grid.Row="2" 
+                                   Name="dockingManager"                                  
+                                   AnchorablesSource="{Binding Panels}"
+                                   DocumentsSource="{Binding Documents}"
+                                   ActiveContent="{Binding ActiveContent, Mode=OneWayToSource}"  
+                                   GridSplitterWidth="10"
+                                   GridSplitterHeight="10"
+                                   >
+            <avalonDock:DockingManager.Theme>
+                <avalonDock:MetroDarkTheme/>
+            </avalonDock:DockingManager.Theme>
+            
+            <avalonDock:DockingManager.LayoutUpdateStrategy>
+                <local:LayoutInitializer/>
+            </avalonDock:DockingManager.LayoutUpdateStrategy>
+            
+            <avalonDock:DockingManager.LayoutItemTemplateSelector>
+                <local:PanesTemplateSelector/>
+            </avalonDock:DockingManager.LayoutItemTemplateSelector>
+            
+            <avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+                <Framework:PanesStyleSelector>
+                    <Framework:PanesStyleSelector.ToolStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutAnchorableItem}">
+                            <Setter Property="Title" Value="{Binding Model.Title}"/>
+                            <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                            <Setter Property="Visibility" Value="{Binding Model.IsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter={x:Static Visibility.Hidden}}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                            <Setter Property="IsActive" Value="{Binding Model.IsActive, Mode=TwoWay}"/>
+                        </Style>
+                    </Framework:PanesStyleSelector.ToolStyle>
+                    <Framework:PanesStyleSelector.DocumentStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutItem}">
+                            <Setter Property="Title" Value="{Binding Model.Title}"/>
+                            <!--
+                            <Setter Property="ToolTip" Value="{Binding Model.FilePath}"/>
+                            <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            -->
+                        </Style>
+                    </Framework:PanesStyleSelector.DocumentStyle>
+                </Framework:PanesStyleSelector>
+            </avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+           
+            
+            
+            <avalonDock:LayoutRoot>
+                <avalonDock:LayoutPanel x:Name="resizingPanel" Orientation="Horizontal">
+
+                    <avalonDock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="250" >                        
+                        <avalonDock:LayoutAnchorablePane Name="leftPane" DoNotRemove="True" DockMinHeight="280" />
+                        <avalonDock:LayoutAnchorablePane Name="leftBottomPane" DoNotRemove="True" />
+                    </avalonDock:LayoutAnchorablePaneGroup>
+
+                    <avalonDock:LayoutPanel Orientation="Vertical">                   
+                        <avalonDock:LayoutDocumentPane x:Name="documentsPane" DockMinWidth="100" />
+                        <avalonDock:LayoutAnchorablePane Name="bottomPane" DoNotRemove="True" DockHeight="200" />
+                    </avalonDock:LayoutPanel>
+                    
+                    <avalonDock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="250" >
+                        <avalonDock:LayoutAnchorablePane Name="rightPane" DoNotRemove="True" DockMinWidth="250" />
+                        <avalonDock:LayoutAnchorablePane Name="rightBottomPane" DoNotRemove="True" />
+                    </avalonDock:LayoutAnchorablePaneGroup>
+
+                </avalonDock:LayoutPanel>
+            </avalonDock:LayoutRoot>
+
+        </avalonDock:DockingManager>
+
+        <StatusBar Name="statusBar" Grid.Row="3" Height="24" HorizontalAlignment="Stretch" Background="Black" Padding="6,0,30,2">
+
+        </StatusBar>
+
+        <local:DialogPlaceholder
+            Grid.RowSpan="{Binding Path=RowDefinitions.Count, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}"
+            Grid.ColumnSpan="{Binding Path=ColumnDefinitions.Count, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}"
+            Content="{Binding DialogContent}"
+            />
+        
+    </Grid>
+</Window>
